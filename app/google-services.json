@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1095491857027",
+    "project_id": "onlinebook-df0d9",
+    "storage_bucket": "onlinebook-df0d9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1095491857027:android:f10d1cd0f789e6525449b6",
+        "android_client_info": {
+          "package_name": "jama.bookApp.onlinebook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1095491857027-4r02fmcru8jr8bsfkc1vf7264adq1ctb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDbhuq9E12HV7C76JSmjWxDBJW0kJyx7qw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1095491857027-4r02fmcru8jr8bsfkc1vf7264adq1ctb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
