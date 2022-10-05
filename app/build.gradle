@@ -60,7 +60,6 @@ dependencies {
     kapt 'com.google.dagger:hilt-compiler:2.40.5'
     kapt 'org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.4.2'
     //Firebase
-    //Firebase
     implementation platform('com.google.firebase:firebase-bom:30.3.2')
     implementation 'com.google.firebase:firebase-analytics-ktx'
     implementation 'com.google.firebase:firebase-firestore-ktx:24.3.1'
@@ -69,4 +68,11 @@ dependencies {
     implementation 'com.google.firebase:firebase-database-ktx:20.0.6'
     implementation "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.1"
     implementation 'com.google.android.gms:play-services-auth:20.3.0'
+    //Coroutines
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.1'
+    implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.1'
+    //progressbar
+    implementation 'com.jpardogo.googleprogressbar:library:1.2.0'
+    //ImagePicker
+    implementation 'com.github.dhaval2404:imagepicker:2.1'
 }

@@ -1,0 +1,48 @@
+package jama.bookApp.onlinebook.presentation.admin
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import dagger.hilt.android.AndroidEntryPoint
+import jama.bookApp.onlinebook.R
+import jama.bookApp.onlinebook.databinding.ActivityAdminBinding
+
+@AndroidEntryPoint
+class AdminActivity : AppCompatActivity() {
+    lateinit var binding:ActivityAdminBinding
+    private lateinit var appBarConfiguration: AppBarConfiguration
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityAdminBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        val navController = findNavController(R.id.main_admin_fragment)
+        binding.bottomNavMenu.background = null
+        binding.bottomNavMenu.menu.getItem(2).isEnabled = false
+        binding.bottomNavMenu.setOnItemSelectedListener { item->
+            when(item.itemId){
+                R.id.adHome -> {
+                    navController.navigate(R.id.homeFragment)
+                }
+                R.id.adProfil -> {
+                    navController.navigate(R.id.profilFragment)
+                }
+            }
+            true
+        }
+        appBarConfiguration = AppBarConfiguration(
+            setOf(
+                R.id.homeFragment,
+                R.id.profilFragment,
+                R.id.addBookFragment
+            )
+        )
+        setupActionBarWithNavController(navController, appBarConfiguration)
+    }
+    override fun onSupportNavigateUp(): Boolean {
+        val navController = findNavController(R.id.main_admin_fragment)
+        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
+    }
+}

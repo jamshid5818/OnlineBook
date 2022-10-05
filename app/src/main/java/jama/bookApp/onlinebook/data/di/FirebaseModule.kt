@@ -30,8 +30,8 @@ object FirebaseModule {
     }
     @Singleton
     @Provides
-    fun providerFirebaseStorageReference():StorageReference{
-        return FirebaseStorage.getInstance().reference
+    fun providerFirebaseStorageReference(): FirebaseStorage {
+        return FirebaseStorage.getInstance()
     }
 
 }

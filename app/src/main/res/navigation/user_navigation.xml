@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base_navigation"
+    app:startDestination="@id/hazratimFragment">
+
+    <fragment
+        android:id="@+id/hazratimFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.hazratim.HazratimFragment"
+        android:label="fragment_hazratim"
+        tools:layout="@layout/fragment_hazratim" />
+    <fragment
+        android:id="@+id/audioFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.audio.AudioFragment"
+        android:label="fragment_audio"
+        tools:layout="@layout/fragment_audio" />
+    <fragment
+        android:id="@+id/kitobFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.kitob.KitobFragment"
+        android:label="fragment_kitob"
+        tools:layout="@layout/fragment_kitob" />
+    <fragment
+        android:id="@+id/dokonFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.dokon.DokonFragment"
+        android:label="fragment_dokon"
+        tools:layout="@layout/fragment_dokon" />
+    <fragment
+        android:id="@+id/sahifamFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.sahifam.SahifamFragment"
+        android:label="fragment_sahifam"
+        tools:layout="@layout/fragment_sahifam" />
+</navigation>
