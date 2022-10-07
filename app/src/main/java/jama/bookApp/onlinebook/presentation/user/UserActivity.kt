@@ -18,6 +18,7 @@ class UserActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityUserBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
         val navController = findNavController(R.id.main_nav_fragment)
         binding.bottomNavMenu.background = null
 

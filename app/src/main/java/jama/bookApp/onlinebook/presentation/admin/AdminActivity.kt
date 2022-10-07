@@ -32,11 +32,14 @@ class AdminActivity : AppCompatActivity() {
             }
             true
         }
+        binding.addBook.setOnClickListener {
+            navController.navigate(R.id.isAudioAndMuslimBookFragment)
+        }
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.homeFragment,
                 R.id.profilFragment,
-                R.id.addBookFragment
+                R.id.isAudioAndMuslimBookFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

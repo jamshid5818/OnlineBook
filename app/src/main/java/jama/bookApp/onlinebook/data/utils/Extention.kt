@@ -18,3 +18,12 @@ fun View.disabled(){
 fun View.enabled(){
     isEnabled = true
 }
+fun Fragment.firebasePathAllBooks(randomKey:String):String{
+    var email2 =""
+    randomKey.forEachIndexed { index, letter ->
+        if (letter.isLetter() || letter.isDigit() || letter!='.') {
+            email2+=randomKey[index]
+        }
+    }
+    return email2
+}

@@ -1,5 +1,6 @@
 package jama.bookApp.onlinebook.presentation.admin.addBook
 
+import android.content.Context
 import android.net.Uri
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -21,12 +22,14 @@ class AddBookViewModel @Inject constructor(
     val addBook :LiveData<UiState<String>>
         get() =_addBook
     fun addBook(
+        context: Context,
         pdfBooksModel: PdfBooksModel,
         fileUri:Uri
     ){
         _addBook.value = UiState.Loading(true)
         viewModelScope.launch(Dispatchers.Main){
             repository.addBook(
+                context = context,
                 fileUri = fileUri,
                 pdfBooksModel = pdfBooksModel
             ){

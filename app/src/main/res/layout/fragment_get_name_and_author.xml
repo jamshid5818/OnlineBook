@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/fullLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".presentation.admin.addBook.GetNameAndAuthorFragment">
+
+    <TextView
+        android:id="@+id/name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/titillium_web_regular"
+        android:text="Kitobning nomi"
+        android:textColor="#03DAC5"
+        android:textStyle="bold"
+        android:textSize="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <EditText
+        android:id="@+id/name_book"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:background="@drawable/black_white_rect_bg"
+        android:ems="10"
+        android:fontFamily="@font/titillium_web_regular"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/name_label" />
+
+    <TextView
+        android:id="@+id/author_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/titillium_web_regular"
+        android:text="Muallifning ismi"
+        android:textColor="#03DAC5"
+        android:textSize="16dp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/name_book"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/name_book"
+        app:layout_constraintTop_toBottomOf="@+id/name_book" />
+
+    <EditText
+        android:id="@+id/name_author"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/black_white_rect_bg"
+        android:fontFamily="@font/titillium_web_regular"
+        android:textColor="@color/black"
+        android:textSize="14dp"
+        app:layout_constraintEnd_toEndOf="@+id/name_book"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/name_book"
+        app:layout_constraintTop_toBottomOf="@+id/author_label" />
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/next_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/black_rect_bg"
+        android:text="Next"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        app:backgroundTint="#03DAC5"
+        app:layout_constraintTop_toBottomOf="@+id/name_author"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:textSize="22dp"
+        android:fontFamily="@font/titillium_web_regular"
+        android:textStyle="bold"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="@+id/name_book"
+        app:layout_constraintEnd_toEndOf="@+id/name_book"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

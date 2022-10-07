@@ -1,31 +1,42 @@
 package jama.bookApp.onlinebook.data.model
 
+import android.net.Uri
+
 class PdfBooksModel {
     var nameBook:String?=null
-    var imageBook:String?=null
+    var imageBookUri: String?=null
+    var pdfUriBook:String?=null
     var costBook:String?=null
     var authorBook:String?=null
     var muqaddima:String?=null
     var randomKey:String?=null
     var amountSold:Int=0
+    var isMuslimBook:Boolean?=null
+    var isAudioBook:Boolean?=null
     constructor()
 
     constructor(
         nameBook: String?,
-        imageBook: String?,
+        imageBookUri: String,
+        pdfUriBook:String,
         costBook: String?,
         authorBook: String?,
         muqaddima: String?,
         randomKey:String,
-        amountSold:Int
+        amountSold:Int,
+        isMuslimBook:Boolean,
+        isAudioBook:Boolean
     ) {
         this.nameBook = nameBook
-        this.imageBook = imageBook
+        this.imageBookUri = imageBookUri
         this.costBook = costBook
         this.authorBook = authorBook
         this.muqaddima = muqaddima
         this.randomKey = randomKey
         this.amountSold = amountSold
+        this.isMuslimBook = isMuslimBook
+        this.isAudioBook = isAudioBook
+        this.pdfUriBook = pdfUriBook
     }
 
 }
