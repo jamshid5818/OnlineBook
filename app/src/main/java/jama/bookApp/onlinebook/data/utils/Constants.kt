@@ -4,5 +4,9 @@ object getStorageImage{
     const val error = 64
 }
 object getFireRealData{
-    const val myRef = "AllBooks"
+    const val getBooks = "AllBooks"
+    const val getUsers = "Users"
+}
+object SharedPrefConstants {
+    val LOCAL_SHARED_PREF = "local_shared_pref"
 }

@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class GetItemClickRepositoryRepositoryImp(var myRef: FirebaseDatabase):GetItemClickRepository {
     override fun getAllBooks(randomKey: String, result: (UiState<PdfBooksModel>) -> Unit) {
         CoroutineScope(Dispatchers.IO).launch {
-            myRef.getReference(getFireRealData.myRef)
+            myRef.getReference(getFireRealData.getBooks)
                 .addValueEventListener(object :ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
                         snapshot.children.forEach {

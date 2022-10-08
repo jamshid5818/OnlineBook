@@ -1,5 +1,6 @@
 package jama.bookApp.onlinebook.data.di
 
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import dagger.Module
@@ -7,6 +8,8 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import jama.bookApp.onlinebook.data.repository.admin.*
+import jama.bookApp.onlinebook.data.repository.user.AuthRepository
+import jama.bookApp.onlinebook.data.repository.user.AuthRepositoryImp
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -33,5 +36,13 @@ object RepositoryModule {
         databaseReference: FirebaseDatabase
     ):GetItemClickRepository{
         return GetItemClickRepositoryRepositoryImp(databaseReference)
+    }
+    @Provides
+    @Singleton
+    fun provideAutghRepository(
+        auth: FirebaseAuth,
+        myRef: FirebaseDatabase,
+    ): AuthRepository {
+        return AuthRepositoryImp(auth,myRef)
     }
 }

@@ -16,7 +16,7 @@ class HomeRepositoryImp(var myRef: FirebaseDatabase) :HomeRepository{
     override fun getAllBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {
-            myRef.getReference(getFireRealData.myRef)
+            myRef.getReference(getFireRealData.getBooks)
                 .addValueEventListener(object :ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
                         snapshot.children.forEach {

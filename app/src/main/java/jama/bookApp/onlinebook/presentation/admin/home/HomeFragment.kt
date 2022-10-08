@@ -44,8 +44,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::infl
                             adapter =
                                 HomeAdapter(
                                     state.data,
-                                    requireContext()
-                                в
+                                    requireContext())
                             binding.list.adapter = adapter
                         }
                     }

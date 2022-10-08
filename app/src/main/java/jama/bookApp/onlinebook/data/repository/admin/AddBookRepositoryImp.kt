@@ -35,7 +35,7 @@ class AddBookRepositoryImp(
                                     .addOnSuccessListener {
                                         referenceBookImage.downloadUrl
                                             .addOnSuccessListener {uriImage->
-                                                databaseReference.getReference(getFireRealData.myRef).child("${pdfBooksModel.randomKey}--pdf").setValue(
+                                                databaseReference.getReference(getFireRealData.getBooks).child("${pdfBooksModel.randomKey}--pdf").setValue(
                                                     pdfBooksModel.randomKey?.let {randomKey->
                                                         pdfBooksModel.isMuslimBook?.let { isMuslim ->
                                                             pdfBooksModel.isAudioBook?.let { isAudio ->
