@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.constraintlayout.utils.widget.ImageFilterView;
@@ -41,19 +42,21 @@ public class HomeAdapter extends BaseAdapter {
         return i;
     }
 
-    @SuppressLint("ViewHolder")
+    @SuppressLint({"ViewHolder", "SetTextI18n"})
     @Override
     public View getView(int index, View view, ViewGroup viewGroup) {
         view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_admin_home,viewGroup,false);
-        ImageFilterView imageFilterView = view.findViewById(R.id.imageBookAdmin);
+        ImageView imageFilterView = view.findViewById(R.id.imageBookItem);
         TextView nametxt = view.findViewById(R.id.book_name_admin);
         TextView authortxt = view.findViewById(R.id.authorNameAdmin);
         TextView amountSoldtxt = view.findViewById(R.id.amoundSold);
         PdfBooksModel book = (PdfBooksModel) getItem(index);
-        Glide.with(context).load(book.getImageBookUri()).into(imageFilterView);
+//        Glide.with(context).load(book.getImageBookUri()).into(imageFilterView);
+        Glide.with(context).load(book.getImageBookUri()).placeholder(android.R.drawable.progress_indeterminate_horizontal).error(android.R.drawable.stat_notify_error).into(imageFilterView);
+
         nametxt.setText(book.getNameBook());
         authortxt.setText(book.getAuthorBook());
-        amountSoldtxt.setText(book.getAmountSold());
+        amountSoldtxt.setText(""+book.getAmountSold() + " ta sotib olingan");
         return view;
     }
 }

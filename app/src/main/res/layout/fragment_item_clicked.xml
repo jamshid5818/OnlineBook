@@ -23,7 +23,7 @@
             app:layout_constraintBottom_toTopOf="@+id/authorName"
             app:layout_constraintEnd_toEndOf="parent"
             android:textColor="@color/black"
-            android:fontFamily="@font/titillium_web_black"
+            android:fontFamily="@font/titillium_web_bold"
             android:text="O'tgan Kunlar"
             android:textSize="22sp"
             />
@@ -46,13 +46,15 @@
             android:layout_width="100dp"
             app:layout_constraintStart_toStartOf="parent"
             android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily=""
             app:layout_constraintTop_toBottomOf="@+id/imageBook"
             app:layout_constraintEnd_toStartOf="@+id/downloadImage"
             />
         <androidx.constraintlayout.utils.widget.ImageFilterView
             android:id="@+id/downloadImage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:src="@drawable/ic_baseline_download_for_offline_24"
             app:layout_constraintTop_toBottomOf="@+id/imageBook"
             app:layout_constraintEnd_toEndOf="parent"

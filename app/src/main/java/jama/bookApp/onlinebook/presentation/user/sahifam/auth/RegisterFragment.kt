@@ -5,12 +5,14 @@ import android.util.Log
 import android.widget.ArrayAdapter
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
+import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.R
 import jama.bookApp.onlinebook.data.model.UserInfo
 import jama.bookApp.onlinebook.data.utils.*
 import jama.bookApp.onlinebook.databinding.FragmentRegisterBinding
 import jama.bookApp.onlinebook.presentation.user.BaseFragment
 
+@AndroidEntryPoint
 class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterBinding::inflate) {
     val viewModel: AuthViewModel by viewModels()
     var gender: String? = null

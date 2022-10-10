@@ -69,7 +69,7 @@ class AuthRepositoryImp @Inject constructor(
                         result.invoke(UiState.Success("Succesfully"))
                     }
                 }.addOnFailureListener {
-                    result.invoke(UiState.Failure("Authentication failed, Check email and password"))
+                    result.invoke(UiState.Failure("Authentication failed, ${it.message}"))
                 }
         }
     }

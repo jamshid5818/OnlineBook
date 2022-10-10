@@ -57,7 +57,8 @@ class UserActivity : AppCompatActivity() {
                 R.id.kitobFragment,
                 R.id.audioFragment,
                 R.id.dokonFragment,
-                R.id.sahifamFragment
+                R.id.sahifamFragment,
+                R.id.registerFragment
             )
         )
         setupActionBarWithNavController(navController, appBarConfiguration)

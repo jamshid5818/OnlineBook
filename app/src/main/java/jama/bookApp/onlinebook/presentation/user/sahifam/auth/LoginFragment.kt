@@ -19,7 +19,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
     override fun onViewCreate() {
         observer()
         binding.loginBtn.setOnClickListener {
-            if (binding.emailEt.text.toString() == "bekodilov.99@mail.ru" && binding.passEt.text.toString()=="bek0109"){
+            if (binding.emailEt.text.toString() == "bekodilov.99@mail.ru" && binding.passEt.text.toString()=="bek01091999"){
                 shared.setEmail("bekodilov.99@mail.ru")
                 startActivity(Intent(requireContext(), AdminActivity::class.java))
             }else{
@@ -79,9 +79,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(FragmentLoginBinding::i
                 is UiState.Success -> {
                     binding.loginBtn.text = "Login"
                     binding.loginProgress.gone()
+                    if (shared.getEmail().toString()=="bekodilov.99@mail.ru"){
+                        startActivity(Intent(requireActivity(), AdminActivity::class.java))
+                    }else{
+                        shared.setEmail(binding.emailEt.text.toString())
+                        findNavController().navigate(R.id.action_loginFragment_to_sahifamFragment)
+                    }
                     toast(state.data)
-                    shared.setEmail(binding.emailEt.text.toString())
-                    findNavController().navigate(R.id.action_loginFragment_to_sahifamFragment)
                 }
             }
         }

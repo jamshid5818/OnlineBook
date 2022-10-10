@@ -4,12 +4,14 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
 import com.bumptech.glide.Glide
+import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.data.utils.snackbar
 import jama.bookApp.onlinebook.databinding.FragmentItemClickedBinding
 import jama.bookApp.onlinebook.presentation.user.BaseFragment
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class ItemClickedFragment : BaseFragment<FragmentItemClickedBinding>(FragmentItemClickedBinding::inflate) {
     var randomKey:String?=null
     val viewModel:ItemClickedViewModel by viewModels()
