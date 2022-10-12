@@ -5,7 +5,6 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
 import com.bumptech.glide.Glide
-import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.data.utils.snackbar
@@ -21,6 +20,9 @@ class ItemClickedFragment : BaseFragment<FragmentItemClickedBinding>(FragmentIte
         observer()
         randomKey = arguments?.getString("RANDOMKEY")
         randomKey?.let { viewModel.getItemList(it) }
+        binding.oqish.setOnClickListener {
+
+        }
     }
 
     private fun observer() {
