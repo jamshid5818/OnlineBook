@@ -1,9 +1,11 @@
 package jama.bookApp.onlinebook.presentation.admin.home
 
+import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.data.utils.snackbar
@@ -13,7 +15,7 @@ import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class ItemClickedFragment : BaseFragment<FragmentItemClickedBinding>(FragmentItemClickedBinding::inflate) {
-    var randomKey:String?=null
+    private var randomKey:String?=null
     val viewModel:ItemClickedViewModel by viewModels()
     override fun onViewCreate() {
         observer()
@@ -30,7 +32,7 @@ class ItemClickedFragment : BaseFragment<FragmentItemClickedBinding>(FragmentIte
 
                         }
                         is UiState.Failure->{
-                            snackbar(state.message.toString(), binding.fullLayout)
+                            snackbar(state.message.toString(), binding.root)
                         }
                         is UiState.Success->{
                             val data = state.data!!
@@ -40,7 +42,11 @@ class ItemClickedFragment : BaseFragment<FragmentItemClickedBinding>(FragmentIte
                             binding.authorName.text = data.authorBook
                             binding.nameBook.text = data.nameBook
                             binding.countDownloads.text = data.amountSold.toString()
-                            binding.description.text = data.muqaddima
+                            binding.description.text = data.muqaddima.toString()
+                            Log.d("RRRRRRRR", data.muqaddima.toString())
+                            if (binding.description.text==data.muqaddima.toString()){
+                                snackbar("true", binding.root)
+                            }
                         }
                     }
                 }

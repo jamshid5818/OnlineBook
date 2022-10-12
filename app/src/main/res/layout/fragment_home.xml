@@ -10,7 +10,6 @@
         android:id="@+id/list"
         android:numColumns="3"
         android:layout_width="match_parent"
-        android:padding="10dp"
         android:layout_height="match_parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

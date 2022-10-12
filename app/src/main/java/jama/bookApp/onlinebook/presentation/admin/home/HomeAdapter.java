@@ -56,7 +56,7 @@ public class HomeAdapter extends BaseAdapter {
 
         nametxt.setText(book.getNameBook());
         authortxt.setText(book.getAuthorBook());
-        amountSoldtxt.setText(""+book.getAmountSold() + " ta sotib olingan");
+        amountSoldtxt.setText(String.valueOf(book.getAmountSold()));
         return view;
     }
 }

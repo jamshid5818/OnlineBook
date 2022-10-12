@@ -30,8 +30,10 @@ class SplayActivity : AppCompatActivity() {
             override fun onAnimationEnd(p0: Animation?) {
                 if (sharedPref.getEmail()=="bekodilov.99@mail.ru"){
                     startActivity(Intent(this@SplayActivity, AdminActivity::class.java))
+                    finish()
                 }else{
                     startActivity(Intent(this@SplayActivity,UserActivity::class.java))
+                    finish()
                 }
             }
 
