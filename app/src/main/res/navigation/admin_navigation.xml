@@ -45,5 +45,14 @@
         android:id="@+id/itemClickedFragment"
         android:name="jama.bookApp.onlinebook.presentation.admin.home.ItemClickedFragment"
         android:label="fragment_item_clicked"
-        tools:layout="@layout/fragment_item_clicked" />
+        tools:layout="@layout/fragment_item_clicked" >
+        <action
+            android:id="@+id/action_itemClickedFragment_to_readBookFragment"
+            app:destination="@id/readBookFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/readBookFragment"
+        android:name="jama.bookApp.onlinebook.presentation.admin.home.ReadBookFragment"
+        android:label="fragment_read_book"
+        tools:layout="@layout/fragment_read_book" />
 </navigation>

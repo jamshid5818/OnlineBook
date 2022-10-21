@@ -70,8 +70,8 @@
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="horizontal"
             android:gravity="center"
+            android:orientation="horizontal"
             android:layout_weight="1">
             <TextView
                 android:id="@+id/countDownloads"
@@ -81,6 +81,7 @@
                 android:fontFamily="@font/titillium_web_bold"
                 android:text="32"
                 android:textSize="32dp"
+                android:layout_marginEnd="20dp"
                 />
 
             <androidx.constraintlayout.utils.widget.ImageFilterView
@@ -88,13 +89,14 @@
                 android:layout_width="50dp"
                 android:layout_height="50dp"
                 android:src="@drawable/ic_baseline_download_for_offline_24"
+                android:layout_marginEnd="80dp"
                 />
             <Button
                 android:id="@+id/oqish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="OQISH"
-                android:layout_marginStart="40dp"
+                android:layout_gravity="center_vertical"
                 />
 
 
