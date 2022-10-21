@@ -20,7 +20,7 @@ class AdminActivity : AppCompatActivity() {
         setContentView(binding.root)
         val navController = findNavController(R.id.main_admin_fragment)
         binding.bottomNavMenu.background = null
-        binding.bottomNavMenu.menu.getItem(2).isEnabled = false
+        binding.bottomNavMenu.menu.getItem(1).isEnabled = false
         binding.bottomNavMenu.setOnItemSelectedListener { item->
             when(item.itemId){
                 R.id.adHome -> {
