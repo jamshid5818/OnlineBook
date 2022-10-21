@@ -1,4 +1,4 @@
-package jama.bookApp.onlinebook.data.repository.admin
+package jama.bookApp.onlinebook.data.repository
 
 import android.util.Log
 import com.google.firebase.database.DataSnapshot
@@ -12,7 +12,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
-class HomeRepositoryImp(var myRef: FirebaseDatabase) :HomeRepository{
+class GetAllBooksRepositoryImp(var myRef: FirebaseDatabase) : GetAllBooksRepository {
     override fun getAllBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {

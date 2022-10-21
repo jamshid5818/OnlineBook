@@ -7,6 +7,8 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import jama.bookApp.onlinebook.data.repository.GetAllBooksRepository
+import jama.bookApp.onlinebook.data.repository.GetAllBooksRepositoryImp
 import jama.bookApp.onlinebook.data.repository.admin.*
 import jama.bookApp.onlinebook.data.repository.user.AuthRepository
 import jama.bookApp.onlinebook.data.repository.user.AuthRepositoryImp
@@ -27,8 +29,8 @@ object RepositoryModule {
     @Singleton
     fun provideGetAllBooks(
         databaseReference: FirebaseDatabase
-    ):HomeRepository{
-        return HomeRepositoryImp(databaseReference)
+    ): GetAllBooksRepository {
+        return GetAllBooksRepositoryImp(databaseReference)
     }
     @Provides
     @Singleton
