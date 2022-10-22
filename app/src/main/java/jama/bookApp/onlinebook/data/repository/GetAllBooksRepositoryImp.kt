@@ -1,18 +1,23 @@
 package jama.bookApp.onlinebook.data.repository
 
 import android.util.Log
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import jama.bookApp.onlinebook.data.model.PdfBooksModel
+import jama.bookApp.onlinebook.data.repository.user.AuthRepository
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.data.utils.getFireRealData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class GetAllBooksRepositoryImp(var myRef: FirebaseDatabase) : GetAllBooksRepository {
+class GetAllBooksRepositoryImp @Inject constructor(
+    private val myRef: FirebaseDatabase,
+) : GetAllBooksRepository {
     override fun getAllBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {
@@ -33,4 +38,5 @@ class GetAllBooksRepositoryImp(var myRef: FirebaseDatabase) : GetAllBooksReposit
                 })
         }
     }
+
 }
