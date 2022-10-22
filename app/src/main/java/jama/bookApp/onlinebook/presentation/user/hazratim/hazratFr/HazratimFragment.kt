@@ -1,14 +1,11 @@
-package jama.bookApp.onlinebook.presentation.user.hazratim
+package jama.bookApp.onlinebook.presentation.user.hazratim.hazratFr
 
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
 import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.data.utils.UiState
-import jama.bookApp.onlinebook.data.utils.snackbar
 import jama.bookApp.onlinebook.databinding.FragmentHazratimBinding
-import jama.bookApp.onlinebook.presentation.admin.home.HomeAdapter
-import jama.bookApp.onlinebook.presentation.admin.home.HomeViewModel
 import jama.bookApp.onlinebook.presentation.user.BaseFragment
 import kotlinx.coroutines.launch
 
@@ -19,6 +16,9 @@ class HazratimFragment : BaseFragment<FragmentHazratimBinding>(FragmentHazratimB
         observer()
         viewModel.getMuslimBooks()
         viewModel.getMuslimAudioBooks()
+        binding.hazratimImage.setOnClickListener {
+
+        }
     }
 
     private fun observer() {

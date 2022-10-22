@@ -7,9 +7,13 @@
 
     <fragment
         android:id="@+id/hazratimFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.hazratim.HazratimFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.hazratim.hazratFr.HazratimFragment"
         android:label="fragment_hazratim"
-        tools:layout="@layout/fragment_hazratim" />
+        tools:layout="@layout/fragment_hazratim" >
+        <action
+            android:id="@+id/action_hazratimFragment_to_clickedHazratFragment"
+            app:destination="@id/clickedHazratFragment" />
+    </fragment>
     <fragment
         android:id="@+id/audioFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.audio.AudioFragment"
@@ -72,4 +76,18 @@
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/clickedHazratFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.hazratim.clickHazratInfo.ClickedHazratFragment"
+        android:label="fragment_clicked_hazrat"
+        tools:layout="@layout/fragment_clicked_hazrat" >
+        <action
+            android:id="@+id/action_clickedHazratFragment_to_itemClickFragment"
+            app:destination="@id/itemClickFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/itemClickFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.hazratim.itemClick.ItemClickFragment"
+        android:label="fragment_item_click"
+        tools:layout="@layout/fragment_item_click" />
 </navigation>

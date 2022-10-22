@@ -14,7 +14,7 @@ import javax.inject.Inject
 
 class HazratimRepositoryImp  @Inject constructor(
     private val myRef: FirebaseDatabase,
-) : HazratimInterface {
+) : HazratimRepository {
 
     override fun getHazratBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
