@@ -1,4 +1,4 @@
-package jama.bookApp.onlinebook.presentation.user.profile
+package jama.bookApp.onlinebook.presentation.user.profile.profile
 
 import androidx.lifecycle.ViewModel
 import dagger.hilt.android.lifecycle.HiltViewModel

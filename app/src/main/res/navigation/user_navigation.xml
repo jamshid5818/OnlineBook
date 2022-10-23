@@ -31,12 +31,15 @@
         tools:layout="@layout/fragment_dokon" />
     <fragment
         android:id="@+id/sahifamFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.profile.ProfileFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.profile.profile.ProfileFragment"
         android:label="fragment_sahifam"
         tools:layout="@layout/fragment_sahifam" >
         <action
             android:id="@+id/action_sahifamFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_sahifamFragment_to_authorsFragment"
+            app:destination="@id/authorsFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -90,4 +93,9 @@
         android:name="jama.bookApp.onlinebook.presentation.user.hazratim.itemClick.ItemClickFragment"
         android:label="fragment_item_click"
         tools:layout="@layout/fragment_item_click" />
+    <fragment
+        android:id="@+id/authorsFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.profile.authors.AuthorsFragment"
+        android:label="fragment_authors"
+        tools:layout="@layout/fragment_authors" />
 </navigation>
