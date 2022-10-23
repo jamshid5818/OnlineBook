@@ -12,6 +12,8 @@ import jama.bookApp.onlinebook.data.repository.GetAllBooksRepositoryImp
 import jama.bookApp.onlinebook.data.repository.admin.*
 import jama.bookApp.onlinebook.data.repository.user.AuthRepository
 import jama.bookApp.onlinebook.data.repository.user.AuthRepositoryImp
+import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepository
+import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepositoryImp
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -31,6 +33,13 @@ object RepositoryModule {
         databaseReference: FirebaseDatabase
     ): GetAllBooksRepository {
         return GetAllBooksRepositoryImp(databaseReference)
+    }
+    @Provides
+    @Singleton
+    fun provideGetHazratim(
+        databaseReference: FirebaseDatabase
+    ):HazratimRepository{
+        return HazratimRepositoryImp(databaseReference)
     }
     @Provides
     @Singleton

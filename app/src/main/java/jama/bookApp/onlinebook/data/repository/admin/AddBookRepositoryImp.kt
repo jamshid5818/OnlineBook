@@ -5,16 +5,19 @@ import android.content.Context
 import android.net.Uri
 import android.util.Log
 import androidx.core.net.toUri
+import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.storage.FirebaseStorage
 import jama.bookApp.onlinebook.data.model.PdfBooksModel
+import jama.bookApp.onlinebook.data.repository.user.AuthRepository
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.data.utils.getFireRealData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class AddBookRepositoryImp(
+class AddBookRepositoryImp @Inject constructor(
     var storageReference: FirebaseStorage,
     var databaseReference: FirebaseDatabase
 ) : AddBookRepository {
