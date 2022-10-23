@@ -125,4 +125,11 @@
     <string name="done">Done</string>
     <string name="error_task_detail">Task detail is missing</string>
     <string name="enter_gender">Enter gender</string>
+    <string name="mualliflar">Mualliflar</string>
+    <string name="chegirmalar">Chegirmalar</string>
+    <string name="oqilgan_kitoblar">Oqilgan kitoblar</string>
+    <string name="promokod">Promokod</string>
+    <string name="tilni_o_zgartirish">Tilni o\'zgartirish</string>
+    <string name="bizning_ilovalar">Bizning Ilovalar</string>
+    <string name="tungi_rejim">Tungi rejim</string>
 </resources>

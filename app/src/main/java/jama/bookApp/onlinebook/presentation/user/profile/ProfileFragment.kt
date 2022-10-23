@@ -9,8 +9,8 @@ import jama.bookApp.onlinebook.presentation.user.BaseFragment
 @AndroidEntryPoint
 class ProfileFragment : BaseFragment<FragmentSahifamBinding>(FragmentSahifamBinding::inflate) {
     override fun onViewCreate() {
-        binding.txt.setOnClickListener {
-            startActivity(Intent(requireContext(), AdminActivity::class.java))
-        }
+//        binding.txt.setOnClickListener {
+//            startActivity(Intent(requireContext(), AdminActivity::class.java))
+//        }
     }
 }
