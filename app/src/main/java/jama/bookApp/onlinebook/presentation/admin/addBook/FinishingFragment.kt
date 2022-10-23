@@ -57,6 +57,7 @@ class FinishingFragment : BaseFragment<FragmentFinishingBinding>(FragmentFinishi
         galleryIntent.type = "application/pdf"
         startActivityForResult(galleryIntent, 1)
     }
+
     @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
@@ -73,7 +74,7 @@ class FinishingFragment : BaseFragment<FragmentFinishingBinding>(FragmentFinishi
                             isAudio
                         )
                     }
-                }?.let {pdfModel->
+                }?.let { pdfModel->
                     viewModel.addBook(requireContext(),
                         pdfModel,
                         uri

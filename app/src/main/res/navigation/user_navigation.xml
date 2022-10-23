@@ -3,32 +3,32 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/base_navigation"
-    app:startDestination="@id/hazratimFragment">
+    app:startDestination="@id/mainFragment">
 
     <fragment
-        android:id="@+id/hazratimFragment"
+        android:id="@+id/mainFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.hazratim.HazratimFragment"
-        android:label="fragment_hazratim"
+        android:label="Main"
         tools:layout="@layout/fragment_hazratim" />
     <fragment
         android:id="@+id/audioFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.audio.AudioFragment"
-        android:label="fragment_audio"
+        android:label="Audio"
         tools:layout="@layout/fragment_audio" />
     <fragment
-        android:id="@+id/kitobFragment"
+        android:id="@+id/booksFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.kitob.KitobFragment"
-        android:label="fragment_kitob"
+        android:label="Books"
         tools:layout="@layout/fragment_kitob" />
     <fragment
-        android:id="@+id/dokonFragment"
+        android:id="@+id/shopsFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.dokon.DokonFragment"
-        android:label="fragment_dokon"
+        android:label="Shops"
         tools:layout="@layout/fragment_dokon" />
     <fragment
-        android:id="@+id/sahifamFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.sahifam.SahifamFragment"
-        android:label="fragment_sahifam"
+        android:id="@+id/profileFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.profile.ProfileFragment"
+        android:label="My Profile"
         tools:layout="@layout/fragment_sahifam" >
         <action
             android:id="@+id/action_sahifamFragment_to_registerFragment"
@@ -36,25 +36,25 @@
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.sahifam.auth.RegisterFragment"
-        android:label="fragment_register"
+        android:name="jama.bookApp.onlinebook.presentation.user.profile.auth.RegisterFragment"
+        android:label="Register"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_registerFragment_to_sahifamFragment"
-            app:destination="@id/sahifamFragment" />
+            app:destination="@id/profileFragment" />
     </fragment>
     <fragment
         android:id="@+id/forgotPasswordFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.sahifam.auth.ForgotPasswordFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.profile.auth.ForgotPasswordFragment"
         android:label="fragment_forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/loginFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.sahifam.auth.LoginFragment"
-        android:label="fragment_login"
+        android:name="jama.bookApp.onlinebook.presentation.user.profile.auth.LoginFragment"
+        android:label="Log In"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
@@ -67,7 +67,7 @@
             app:destination="@id/loginFragment" />
         <action
             android:id="@+id/action_loginFragment_to_sahifamFragment"
-            app:destination="@id/sahifamFragment" />
+            app:destination="@id/profileFragment" />
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />

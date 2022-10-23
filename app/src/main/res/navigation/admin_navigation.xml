@@ -14,7 +14,7 @@
             app:destination="@id/itemClickedFragment" />
     </fragment>
     <fragment
-        android:id="@+id/profilFragment"
+        android:id="@+id/profileFragment"
         android:name="jama.bookApp.onlinebook.presentation.admin.profil.ProfilFragment"
         android:label="fragment_profil"
         tools:layout="@layout/fragment_profil" />

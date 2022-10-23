@@ -8,6 +8,7 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.R
 import jama.bookApp.onlinebook.data.utils.SharedPref
@@ -28,43 +29,44 @@ class UserActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_SECURE, WindowManager.LayoutParams.FLAG_SECURE)
         val navController = findNavController(R.id.main_nav_fragment)
         binding.bottomNavMenu.background = null
-
-        binding.bottomNavMenu.setOnItemSelectedListener { item->
-            when(item.itemId){
-                R.id.miXazratim -> {
-                    navController.navigate(R.id.hazratimFragment)
-                }
-                R.id.miKitob -> {
-                    navController.navigate(R.id.kitobFragment)
-                }
-                R.id.miAudio -> {
-                    navController.navigate(R.id.audioFragment)
-                }
-                R.id.miDokon -> {
-                    navController.navigate(R.id.dokonFragment)
-                }
-                R.id.miSahifam ->{
-                    if (sharedPref.getEmail().toString().isNotEmpty()) {
-                        navController.navigate(R.id.sahifamFragment)
-                    }else{
-                        navController.navigate(R.id.registerFragment)
-                    }
-                }
-            }
-            true
-        }
+//        binding.bottomNavMenu.setOnItemSelectedListener { item->
+//            when(item.itemId){
+//                R.id.miXazratim -> {
+//                    navController.navigate(R.id.hazratimFragment)
+//                }
+//                R.id.miKitob -> {
+//                    navController.navigate(R.id.kitobFragment)
+//                }
+//                R.id.miAudio -> {
+//                    navController.navigate(R.id.audioFragment)
+//                }
+//                R.id.miDokon -> {
+//                    navController.navigate(R.id.dokonFragment)
+//                }
+//                R.id.miSahifam ->{
+//                    if (sharedPref.getEmail().toString().isNotEmpty()) {
+//                        navController.navigate(R.id.sahifamFragment)
+//                    }else{
+//                        navController.navigate(R.id.registerFragment)
+//                    }
+//                }
+//            }
+//            true
+//        }
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.hazratimFragment,
-                R.id.kitobFragment,
+                R.id.mainFragment,
+                R.id.booksFragment,
                 R.id.audioFragment,
-                R.id.dokonFragment,
-                R.id.sahifamFragment,
+                R.id.shopsFragment,
+                R.id.profileFragment,
                 R.id.registerFragment
             )
         )
+        binding.bottomNavMenu.setupWithNavController(navController)
         setupActionBarWithNavController(navController, appBarConfiguration)
     }
+
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.main_nav_fragment)
         return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()

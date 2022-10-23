@@ -20,6 +20,7 @@
         app:fabCradleVerticalOffset="10dp"
         app:fabCradleRoundedCornerRadius="20dp"
         android:layout_gravity="bottom">
+
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavMenu"
             android:layout_width="match_parent"

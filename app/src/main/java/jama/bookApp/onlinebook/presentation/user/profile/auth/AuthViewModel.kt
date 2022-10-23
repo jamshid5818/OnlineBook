@@ -1,4 +1,4 @@
-package jama.bookApp.onlinebook.presentation.user.sahifam.auth
+package jama.bookApp.onlinebook.presentation.user.profile.auth
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
