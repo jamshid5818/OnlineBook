@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/mainFragment"
+    <item android:id="@+id/hazratimFragment"
         android:title="Main"
         android:icon="@drawable/ic_baseline_blur_on_24"
         />
-    <item android:id="@+id/booksFragment"
+    <item android:id="@+id/kitobFragment"
         android:title="Shops"
         android:icon="@drawable/ic_baseline_book_24"
         />
@@ -12,11 +12,11 @@
         android:title="Audio"
         android:icon="@drawable/ic_baseline_audio_file_24"
         />
-    <item android:id="@+id/shopsFragment"
+    <item android:id="@+id/dokonFragment"
         android:title="Shops"
         android:icon="@drawable/ic_baseline_shop_24"
         />
-    <item android:id="@+id/profileFragment"
+    <item android:id="@+id/sahifamFragment"
         android:title="Profile"
         android:icon="@drawable/ic_baseline_person_pin_24"
         />

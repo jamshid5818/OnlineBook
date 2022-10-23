@@ -32,7 +32,6 @@ class ForgotPasswordFragment : BaseFragment<FragmentForgotPasswordBinding>(Fragm
                     toast(state.message)
                 }
                 is UiState.Success -> {
-
                     binding.forgotPassBtn.text = "Send"
                     binding.forgotPassProgress.gone()
                     toast(state.data)

@@ -55,10 +55,11 @@ class UserActivity : AppCompatActivity() {
 //        }
         appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.mainFragment,
-                R.id.booksFragment,
+                R.id.hazratimFragment,
+                R.id.sahifamFragment,
                 R.id.audioFragment,
-                R.id.shopsFragment,
+                R.id.kitobFragment,
+                R.id.dokonFragment,
                 R.id.profileFragment,
                 R.id.registerFragment
             )
