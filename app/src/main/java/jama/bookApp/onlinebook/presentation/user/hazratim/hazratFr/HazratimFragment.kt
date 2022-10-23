@@ -19,6 +19,7 @@ class HazratimFragment : BaseFragment<FragmentHazratimBinding>(FragmentHazratimB
         binding.hazratimImage.setOnClickListener {
 
         }
+
     }
 
     private fun observer() {
