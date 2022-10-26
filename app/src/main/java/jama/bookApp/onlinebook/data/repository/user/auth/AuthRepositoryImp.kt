@@ -1,10 +1,10 @@
-package jama.bookApp.onlinebook.data.repository.user
+package jama.bookApp.onlinebook.data.repository.user.auth
 
 import com.google.firebase.auth.*
 import com.google.firebase.database.FirebaseDatabase
 import jama.bookApp.onlinebook.data.model.UserInfo
 import jama.bookApp.onlinebook.data.utils.UiState
-import jama.bookApp.onlinebook.data.utils.getFireRealData
+import jama.bookApp.onlinebook.data.utils.getFirebaseRealData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -21,7 +21,7 @@ class AuthRepositoryImp @Inject constructor(
             auth.createUserWithEmailAndPassword(userInfo.email,userInfo.password)
                 .addOnCompleteListener { task ->
                     if (task.isSuccessful){
-                        myRef.getReference(getFireRealData.getUsers).child(emailFireKey).child("userInfo").setValue(userInfo).addOnCompleteListener {
+                        myRef.getReference(getFirebaseRealData.getUsers).child(emailFireKey).child("userInfo").setValue(userInfo).addOnCompleteListener {
                             if (it.isSuccessful){
                                 result.invoke(UiState.Success("Email address has been successfully registered"))
                             }else {

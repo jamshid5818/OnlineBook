@@ -132,4 +132,15 @@
     <string name="tilni_o_zgartirish">Tilni o\'zgartirish</string>
     <string name="bizning_ilovalar">Bizning Ilovalar</string>
     <string name="tungi_rejim">Tungi rejim</string>
+    <string name="hazratim">Hazratim</string>
+    <string name="audio">Audio</string>
+    <string name="kitoblar">Kitoblar</string>
+    <string name="dokon">Dokon</string>
+    <string name="sahifam">Sahifam</string>
+    <string name="registration">Registratsiya</string>
+    <string name="forgot_password">Parolni unutdingizmi</string>
+    <string name="log_in">Log in</string>
+    <string name="authors">Mualliflar</string>
+    <string name="muallif_nomini_kiriting">Muallif nomini kiriting</string>
+    <string name="qo_shish">Qo\'shish</string>
 </resources>

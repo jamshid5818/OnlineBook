@@ -8,7 +8,7 @@
     <fragment
         android:id="@+id/hazratimFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.hazratim.hazratFr.HazratimFragment"
-        android:label="fragment_hazratim"
+        android:label="@string/hazratim"
         tools:layout="@layout/fragment_hazratim" >
         <action
             android:id="@+id/action_hazratimFragment_to_clickedHazratFragment"
@@ -17,22 +17,22 @@
     <fragment
         android:id="@+id/audioFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.audio.AudioFragment"
-        android:label="fragment_audio"
+        android:label="@string/audio"
         tools:layout="@layout/fragment_audio" />
     <fragment
         android:id="@+id/kitobFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.kitob.KitobFragment"
-        android:label="fragment_kitob"
+        android:label="@string/kitoblar"
         tools:layout="@layout/fragment_kitob" />
     <fragment
         android:id="@+id/dokonFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.dokon.DokonFragment"
-        android:label="fragment_dokon"
+        android:label="@string/dokon"
         tools:layout="@layout/fragment_dokon" />
     <fragment
         android:id="@+id/sahifamFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.profile.profile.ProfileFragment"
-        android:label="fragment_sahifam"
+        android:label="@string/sahifam"
         tools:layout="@layout/fragment_sahifam" >
         <action
             android:id="@+id/action_sahifamFragment_to_registerFragment"
@@ -40,11 +40,14 @@
         <action
             android:id="@+id/action_sahifamFragment_to_authorsFragment"
             app:destination="@id/authorsFragment" />
+        <action
+            android:id="@+id/action_sahifamFragment_to_addAuthorFragment"
+            app:destination="@id/addAuthorFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.profile.auth.RegisterFragment"
-        android:label="fragment_register"
+        android:label="@string/registration"
         tools:layout="@layout/fragment_register" >
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
@@ -56,12 +59,12 @@
     <fragment
         android:id="@+id/forgotPasswordFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.profile.auth.ForgotPasswordFragment"
-        android:label="fragment_forgot_password"
+        android:label="@string/forgot_password"
         tools:layout="@layout/fragment_forgot_password" />
     <fragment
         android:id="@+id/loginFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.profile.auth.LoginFragment"
-        android:label="fragment_login"
+        android:label="@string/log_in"
         tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/action_loginFragment_to_forgotPasswordFragment"
@@ -96,6 +99,11 @@
     <fragment
         android:id="@+id/authorsFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.profile.authors.AuthorsFragment"
-        android:label="fragment_authors"
+        android:label="@string/authors"
         tools:layout="@layout/fragment_authors" />
+    <fragment
+        android:id="@+id/addAuthorFragment"
+        android:name="jama.bookApp.onlinebook.presentation.admin.author.AddAuthorFragment"
+        android:label="fragment_add_author"
+        tools:layout="@layout/fragment_add_author" />
 </navigation>

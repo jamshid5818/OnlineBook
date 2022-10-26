@@ -1,4 +1,4 @@
-package jama.bookApp.onlinebook.data.repository.user
+package jama.bookApp.onlinebook.data.repository.user.auth
 
 import jama.bookApp.onlinebook.data.model.UserInfo
 import jama.bookApp.onlinebook.data.utils.UiState

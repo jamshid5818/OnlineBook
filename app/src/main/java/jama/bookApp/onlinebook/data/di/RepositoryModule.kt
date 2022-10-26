@@ -10,8 +10,10 @@ import dagger.hilt.components.SingletonComponent
 import jama.bookApp.onlinebook.data.repository.GetAllBooksRepository
 import jama.bookApp.onlinebook.data.repository.GetAllBooksRepositoryImp
 import jama.bookApp.onlinebook.data.repository.admin.*
-import jama.bookApp.onlinebook.data.repository.user.AuthRepository
-import jama.bookApp.onlinebook.data.repository.user.AuthRepositoryImp
+import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepository
+import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepositoryImp
+import jama.bookApp.onlinebook.data.repository.user.authors.AuthorsRepository
+import jama.bookApp.onlinebook.data.repository.user.authors.AuthorsRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepository
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepositoryImp
 import javax.inject.Singleton
@@ -41,6 +43,16 @@ object RepositoryModule {
     ):HazratimRepository{
         return HazratimRepositoryImp(databaseReference)
     }
+    
+    @Provides
+    @Singleton
+    fun provideAuthors(
+        storageReference: FirebaseStorage,
+        databaseReference: FirebaseDatabase
+    ):AuthorsRepository{
+        return AuthorsRepositoryImp(storageReference,databaseReference)
+    }
+
     @Provides
     @Singleton
     fun provides(

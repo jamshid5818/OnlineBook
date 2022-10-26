@@ -22,5 +22,9 @@ class ProfileFragment : BaseFragment<FragmentSahifamBinding>(FragmentSahifamBind
         binding.authors.setOnClickListener {
             navController.navigate(R.id.action_sahifamFragment_to_authorsFragment)
         }
+
+        binding.email.setOnClickListener {
+            navController.navigate(R.id.action_sahifamFragment_to_addAuthorFragment)
+        }
     }
 }

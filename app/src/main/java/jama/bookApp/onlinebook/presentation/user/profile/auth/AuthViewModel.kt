@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jama.bookApp.onlinebook.data.model.UserInfo
-import jama.bookApp.onlinebook.data.repository.user.AuthRepository
+import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepository
 import jama.bookApp.onlinebook.data.utils.UiState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

@@ -6,7 +6,7 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import jama.bookApp.onlinebook.data.model.PdfBooksModel
 import jama.bookApp.onlinebook.data.utils.UiState
-import jama.bookApp.onlinebook.data.utils.getFireRealData
+import jama.bookApp.onlinebook.data.utils.getFirebaseRealData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +19,7 @@ class HazratimRepositoryImp  @Inject constructor(
     override fun getHazratBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {
-            myRef.getReference(getFireRealData.getBooks)
+            myRef.getReference(getFirebaseRealData.getBooks)
                 .addValueEventListener(object :ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
                         snapshot.children.forEach {
@@ -42,7 +42,7 @@ class HazratimRepositoryImp  @Inject constructor(
     override fun getHazratAudioBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {
-            myRef.getReference(getFireRealData.getBooks)
+            myRef.getReference(getFirebaseRealData.getBooks)
                 .addValueEventListener(object :ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
                         snapshot.children.forEach {
