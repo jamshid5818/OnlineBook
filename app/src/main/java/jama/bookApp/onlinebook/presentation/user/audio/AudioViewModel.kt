@@ -7,13 +7,14 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import jama.bookApp.onlinebook.data.model.PdfBooksModel
 import jama.bookApp.onlinebook.data.repository.GetAllBooksRepository
+import jama.bookApp.onlinebook.data.repository.user.audio.AudioRepository
 import jama.bookApp.onlinebook.data.utils.UiState
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class AudioViewModel @Inject constructor(
-    val repository: GetAllBooksRepository
+    val repository: AudioRepository
 ): ViewModel(){
     private val _getAudioBooks = MutableLiveData<UiState<ArrayList<PdfBooksModel>>>()
     val getAudioBooks: LiveData<UiState<ArrayList<PdfBooksModel>>>
@@ -23,14 +24,14 @@ class AudioViewModel @Inject constructor(
         val audioBooksList = ArrayList<PdfBooksModel>()
         _getAudioBooks.value = UiState.Loading(true)
         viewModelScope.launch {
-            repository.getAllBooks {
-                it.data?.forEach {pdf->
-                    if (pdf.isAudioBook == true){
-                        audioBooksList.add(pdf)
-                    }
-                }
-                _getAudioBooks.value = UiState.Success(audioBooksList)
-            }
+//            repository.getAllBooks {
+//                it.data?.forEach {pdf->
+//                    if (pdf.isAudioBook == true){
+//                        audioBooksList.add(pdf)
+//                    }
+//                }
+//                _getAudioBooks.value = UiState.Success(audioBooksList)
+//            }
         }
     }
 }

@@ -40,6 +40,7 @@ class UserActivity : AppCompatActivity() {
                 R.id.profileFragment,
                 R.id.registerFragment
             )
+
         )
 
         binding.bottomNavMenu.setupWithNavController(navController)

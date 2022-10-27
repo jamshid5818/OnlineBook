@@ -21,9 +21,9 @@
         tools:layout="@layout/fragment_audio" />
     <fragment
         android:id="@+id/kitobFragment"
-        android:name="jama.bookApp.onlinebook.presentation.user.kitob.KitobFragment"
+        android:name="jama.bookApp.onlinebook.presentation.user.kitob.BookFragment"
         android:label="@string/kitoblar"
-        tools:layout="@layout/fragment_kitob" />
+        tools:layout="@layout/fragment_book" />
     <fragment
         android:id="@+id/dokonFragment"
         android:name="jama.bookApp.onlinebook.presentation.user.dokon.DokonFragment"

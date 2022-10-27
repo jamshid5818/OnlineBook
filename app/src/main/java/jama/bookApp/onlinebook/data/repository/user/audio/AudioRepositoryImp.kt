@@ -1,6 +1,5 @@
-package jama.bookApp.onlinebook.data.repository
+package jama.bookApp.onlinebook.data.repository.user.audio
 
-import android.util.Log
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -13,19 +12,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class GetAllBooksRepositoryImp @Inject constructor(
-    private val myRef: FirebaseDatabase
-) : GetAllBooksRepository {
-    override fun getAllBooks(result: (UiState<ArrayList<PdfBooksModel>>) -> Unit) {
+class AudioRepositoryImp @Inject constructor(private val myRef:FirebaseDatabase):AudioRepository {
+    override fun getFreeBooks(result: (UiState<List<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {
             myRef.getReference(getFirebaseRealData.getBooks)
-                .addValueEventListener(object :ValueEventListener{
+                .addValueEventListener(object : ValueEventListener {
                     override fun onDataChange(snapshot: DataSnapshot) {
                         snapshot.children.forEach {
-                            val data:PdfBooksModel = it.getValue(PdfBooksModel::class.java)!!
-                            Log.d("FFFFFFFFFFF", data.toString())
-                            list.add(data)
+                            val data: PdfBooksModel = it.getValue(PdfBooksModel::class.java)!!
+                            if (data.isAudioBook==true){
+                                list.add(data)
+                            }
                         }
                         result.invoke(UiState.Success(list))
                     }
@@ -33,8 +31,8 @@ class GetAllBooksRepositoryImp @Inject constructor(
                     override fun onCancelled(error: DatabaseError) {
                         result.invoke(UiState.Failure(error.message))
                     }
+
                 })
         }
     }
-
 }

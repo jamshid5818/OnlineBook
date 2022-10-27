@@ -10,10 +10,14 @@ import dagger.hilt.components.SingletonComponent
 import jama.bookApp.onlinebook.data.repository.GetAllBooksRepository
 import jama.bookApp.onlinebook.data.repository.GetAllBooksRepositoryImp
 import jama.bookApp.onlinebook.data.repository.admin.*
+import jama.bookApp.onlinebook.data.repository.user.audio.AudioRepository
+import jama.bookApp.onlinebook.data.repository.user.audio.AudioRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepository
 import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.authors.AuthorsRepository
 import jama.bookApp.onlinebook.data.repository.user.authors.AuthorsRepositoryImp
+import jama.bookApp.onlinebook.data.repository.user.books.BookRepository
+import jama.bookApp.onlinebook.data.repository.user.books.BookRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepository
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepositoryImp
 import javax.inject.Singleton
@@ -42,6 +46,20 @@ object RepositoryModule {
         databaseReference: FirebaseDatabase
     ):HazratimRepository{
         return HazratimRepositoryImp(databaseReference)
+    }
+    @Provides
+    @Singleton
+    fun provideBooks(
+        databaseReference: FirebaseDatabase
+    ):BookRepository{
+        return BookRepositoryImp(databaseReference)
+    }
+    @Provides
+    @Singleton
+    fun provideAudio(
+        databaseReference: FirebaseDatabase
+    ):AudioRepository{
+        return AudioRepositoryImp(databaseReference)
     }
     
     @Provides
