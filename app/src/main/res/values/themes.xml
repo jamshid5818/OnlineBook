@@ -38,5 +38,8 @@
     <style name="profile_name_layout">
         <item name="android:background">@drawable/bg_name</item>
     </style>
+    <style name="ToolbarColoredBackArrow" parent="Theme.OnlineBook">
+        <item name="android:textColorSecondary">#FF0000</item>
+    </style>
 
 </resources>

@@ -4,6 +4,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
 import dagger.hilt.android.AndroidEntryPoint
+import jama.bookApp.onlinebook.R
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.databinding.FragmentHazratimBinding
 import jama.bookApp.onlinebook.presentation.user.BaseFragment
@@ -17,7 +18,7 @@ class HazratimFragment : BaseFragment<FragmentHazratimBinding>(FragmentHazratimB
         viewModel.getMuslimBooks()
         viewModel.getMuslimAudioBooks()
         binding.hazratimImage.setOnClickListener {
-
+            navController.navigate(R.id.action_hazratimFragment_to_clickedHazratFragment)
         }
 
     }
