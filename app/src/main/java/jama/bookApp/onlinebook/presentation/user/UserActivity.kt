@@ -1,20 +1,13 @@
 package jama.bookApp.onlinebook.presentation.user
 
-import android.content.Intent
-import android.graphics.PorterDuff
-import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.WindowManager
-import androidx.appcompat.app.ActionBar
-import androidx.appcompat.widget.Toolbar
 import androidx.navigation.findNavController
 import androidx.navigation.ui.*
 import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.R
 import jama.bookApp.onlinebook.data.utils.SharedPref
 import jama.bookApp.onlinebook.databinding.ActivityUserBinding
-import jama.bookApp.onlinebook.presentation.admin.AdminActivity
 
 @AndroidEntryPoint
 class UserActivity : AppCompatActivity() {
@@ -37,10 +30,8 @@ class UserActivity : AppCompatActivity() {
                 R.id.audioFragment,
                 R.id.kitobFragment,
                 R.id.dokonFragment,
-                R.id.profileFragment,
-                R.id.registerFragment
+                R.id.profileFragment
             )
-
         )
 
         binding.bottomNavMenu.setupWithNavController(navController)
