@@ -18,4 +18,10 @@ class SharedPref(context: Context) {
         editor.apply()
     }
     fun getEmail() = preferences.getString("PersonEmail","")
+    fun setName(name: String){
+        editor = preferences.edit()
+        editor.putString("NAME", name)
+        editor.apply()
+    }
+    fun getName() = preferences.getString("NAME","")
 }

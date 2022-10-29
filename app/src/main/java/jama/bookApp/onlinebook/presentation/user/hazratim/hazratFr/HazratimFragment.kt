@@ -6,6 +6,8 @@ import androidx.lifecycle.whenCreated
 import dagger.hilt.android.AndroidEntryPoint
 import jama.bookApp.onlinebook.R
 import jama.bookApp.onlinebook.data.utils.UiState
+import jama.bookApp.onlinebook.data.utils.gone
+import jama.bookApp.onlinebook.data.utils.show
 import jama.bookApp.onlinebook.databinding.FragmentHazratimBinding
 import jama.bookApp.onlinebook.presentation.user.BaseFragment
 import kotlinx.coroutines.launch
@@ -20,7 +22,6 @@ class HazratimFragment : BaseFragment<FragmentHazratimBinding>(FragmentHazratimB
         binding.hazratimImage.setOnClickListener {
             navController.navigate(R.id.action_hazratimFragment_to_clickedHazratFragment)
         }
-
     }
 
     private fun observer() {
@@ -32,14 +33,13 @@ class HazratimFragment : BaseFragment<FragmentHazratimBinding>(FragmentHazratimB
 
                         }
                         is UiState.Failure->{
-//                            snackbar(state.message.toString(), binding.fullLayout)
+                        binding.list1.gone()
+                        binding.list2.gone()
+                        binding.noBook.show()
+                        binding.noAudio.show()
                         }
                         is UiState.Success->{
-//                            adapter =
-//                                HomeAdapter(
-//                                    state.data,
-//                                    requireContext())
-//                            binding.list.adapter = adapter
+
                         }
                     }
                 }

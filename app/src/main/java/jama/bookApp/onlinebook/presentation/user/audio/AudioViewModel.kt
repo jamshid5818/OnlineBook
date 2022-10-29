@@ -24,14 +24,10 @@ class AudioViewModel @Inject constructor(
         val audioBooksList = ArrayList<PdfBooksModel>()
         _getAudioBooks.value = UiState.Loading(true)
         viewModelScope.launch {
-//            repository.getAllBooks {
-//                it.data?.forEach {pdf->
-//                    if (pdf.isAudioBook == true){
-//                        audioBooksList.add(pdf)
-//                    }
-//                }
-//                _getAudioBooks.value = UiState.Success(audioBooksList)
-//            }
+            repository.getAudioBooks {
+                it.data?.let { it1 -> audioBooksList.addAll(it1) }
+                _getAudioBooks.value = UiState.Success(audioBooksList)
+            }
         }
     }
 }

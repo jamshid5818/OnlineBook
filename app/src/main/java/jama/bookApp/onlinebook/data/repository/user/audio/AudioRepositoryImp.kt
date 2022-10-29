@@ -13,7 +13,7 @@ import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class AudioRepositoryImp @Inject constructor(private val myRef:FirebaseDatabase):AudioRepository {
-    override fun getFreeBooks(result: (UiState<List<PdfBooksModel>>) -> Unit) {
+    override fun getAudioBooks(result: (UiState<List<PdfBooksModel>>) -> Unit) {
         val list = ArrayList<PdfBooksModel>()
         CoroutineScope(Dispatchers.IO).launch {
             myRef.getReference(getFirebaseRealData.getBooks)

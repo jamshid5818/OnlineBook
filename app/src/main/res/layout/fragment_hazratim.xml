@@ -66,6 +66,20 @@
             app:layout_constraintTop_toBottomOf="@+id/bookAll" />
 
         <TextView
+            android:id="@+id/no_book"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="8dp"
+            android:minHeight="100dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/bookAll"
+            android:text="Cooming Son"
+            android:gravity="center"
+            android:textSize="43dp"
+            android:visibility="invisible"
+            />
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -98,7 +112,20 @@
             android:layout_marginTop="8dp"
             android:orientation="horizontal"
             app:layout_constraintTop_toBottomOf="@+id/bookAll2" />
+        <TextView
+            android:id="@+id/no_Audio"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:minHeight="100dp"
+            android:text="Cooming Soon"
+            android:textSize="32sp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/titillium_web_black"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@+id/bookAll2"
+            android:visibility="invisible"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 </androidx.core.widget.NestedScrollView>

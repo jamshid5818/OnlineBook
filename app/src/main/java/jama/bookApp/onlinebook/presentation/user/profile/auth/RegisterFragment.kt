@@ -112,6 +112,7 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                     binding.registerProgress.gone()
                     snackbar("Registration Succes", binding.root)
                     shared.setEmail(binding.editEmailText.text.toString())
+                    shared.setName(binding.editNameText.text.toString())
                     findNavController().navigate(R.id.action_registerFragment_to_sahifamFragment)
                 }
             }

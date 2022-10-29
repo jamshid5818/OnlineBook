@@ -24,11 +24,7 @@ class HazratimViewModel @Inject constructor(
         _getMuslimBooks.value = UiState.Loading(true)
         viewModelScope.launch {
             repository.getHazratBooks {
-                it.data?.forEach {pdf->
-                    if (pdf.isMuslimBook == true){
-                        muslimBooksList.add(pdf)
-                    }
-                }
+                it.data?.let { it1 -> muslimBooksList.addAll(it1) }
                 _getMuslimBooks.value = UiState.Success(muslimBooksList)
             }
         }
@@ -42,11 +38,7 @@ class HazratimViewModel @Inject constructor(
         _getMuslimAudioBooks.value = UiState.Loading(true)
         viewModelScope.launch {
             repository.getHazratAudioBooks {
-                it.data?.forEach {pdf->
-                    if (pdf.isMuslimBook == true){
-                        muslimAudioBooksList.add(pdf)
-                    }
-                }
+                it.data?.let { it1 -> muslimAudioBooksList.addAll(it1) }
                 _getMuslimAudioBooks.value = UiState.Success(muslimAudioBooksList)
             }
         }

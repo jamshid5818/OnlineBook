@@ -29,7 +29,7 @@ class UserActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navController = findNavController(R.id.main_nav_fragment)
-
+        binding.bottomNavMenu.setupWithNavController(navController)
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.hazratimFragment,

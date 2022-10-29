@@ -20,6 +20,8 @@ import jama.bookApp.onlinebook.data.repository.user.books.BookRepository
 import jama.bookApp.onlinebook.data.repository.user.books.BookRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepository
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepositoryImp
+import jama.bookApp.onlinebook.data.repository.user.shop.ShopRepository
+import jama.bookApp.onlinebook.data.repository.user.shop.ShopRepositoryImp
 import javax.inject.Singleton
 
 @InstallIn(SingletonComponent::class)
@@ -39,6 +41,13 @@ object RepositoryModule {
         databaseReference: FirebaseDatabase
     ): GetAllBooksRepository {
         return GetAllBooksRepositoryImp(databaseReference)
+    }
+    @Provides
+    @Singleton
+    fun provideShop(
+        databaseReference: FirebaseDatabase
+    ):ShopRepository{
+        return ShopRepositoryImp(databaseReference)
     }
     @Provides
     @Singleton

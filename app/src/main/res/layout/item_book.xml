@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="145dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.cardview.widget.CardView
+        app:layout_constraintTop_toTopOf="parent"
+        android:id="@+id/card"
+        android:layout_width="145dp"
+        android:layout_height="210dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        >
+        <ImageView
+            android:id="@+id/imageBookItem"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/quran"/>
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/book_name_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/card"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        android:textSize="12sp"
+        android:text="O'tgan kunlar"
+        android:fontFamily="@font/titillium_web_bold"
+        android:textColor="@color/black"
+        />
+    <TextView
+        android:id="@+id/authorNameAdmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/book_name_admin"
+        app:layout_constraintStart_toStartOf="@+id/card"
+        app:layout_constraintEnd_toEndOf="@+id/card"
+        android:text="Shayx Muxammad Sodiq Muhammad Yusuf"
+        android:textSize="12sp"
+        android:gravity="center"
+        />
+    <TextView
+        android:id="@+id/cost"
+        android:layout_width="60sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/authorNameAdmin"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:fontFamily="@font/titillium_web_bold"
+        android:textSize="16sp"
+        android:text="134"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
