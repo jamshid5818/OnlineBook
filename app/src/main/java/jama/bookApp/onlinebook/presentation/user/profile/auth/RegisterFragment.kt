@@ -34,7 +34,8 @@ class RegisterFragment : BaseFragment<FragmentRegisterBinding>(FragmentRegisterB
                     name = binding.editNameText.text.toString(),
                     gender = gender!!,
                     password = binding.editpasswordText.text.toString(),
-                    age = binding.spinnerAge.selectedItem.toString().toInt()
+                    age = binding.spinnerAge.selectedItem.toString().toInt(),
+                    balance = 0
                 ),
                     viewModel.firebasePathgmail(binding.editEmailText.text.toString()))
             }

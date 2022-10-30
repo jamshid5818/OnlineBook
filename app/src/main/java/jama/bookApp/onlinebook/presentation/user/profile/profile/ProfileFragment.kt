@@ -22,16 +22,17 @@ class ProfileFragment : BaseFragment<FragmentSahifamBinding>(FragmentSahifamBind
         }
         if (shared.getEmail()!=""){
             binding.email.text = shared.getEmail()
+            binding.name.text = shared.getName()
         }else{
             binding.email.text = "Ro'yxatdan o'tish"
-            binding.name.text = shared.getName()
+            binding.name.text = ""
         }
         binding.authors.setOnClickListener {
             navController.navigate(R.id.action_sahifamFragment_to_authorsFragment)
         }
         binding.dataProfil.setOnClickListener {
             if (shared.getEmail()!=""){
-                navController.navigate(R.id.action_sahifamFragment_to_addAuthorFragment)
+//                navController.navigate(R.id.action_sahifamFragment_to_addAuthorFragment)
             }else{
                 navController.navigate(R.id.action_sahifamFragment_to_registerFragment)
             }

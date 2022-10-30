@@ -40,9 +40,6 @@
         <action
             android:id="@+id/action_sahifamFragment_to_authorsFragment"
             app:destination="@id/authorsFragment" />
-        <action
-            android:id="@+id/action_sahifamFragment_to_addAuthorFragment"
-            app:destination="@id/addAuthorFragment" />
     </fragment>
     <fragment
         android:id="@+id/registerFragment"
@@ -101,9 +98,4 @@
         android:name="jama.bookApp.onlinebook.presentation.user.profile.authors.AuthorsFragment"
         android:label="@string/authors"
         tools:layout="@layout/fragment_authors" />
-    <fragment
-        android:id="@+id/addAuthorFragment"
-        android:name="jama.bookApp.onlinebook.presentation.admin.author.AddAuthorFragment"
-        android:label="fragment_add_author"
-        tools:layout="@layout/fragment_add_author" />
 </navigation>
