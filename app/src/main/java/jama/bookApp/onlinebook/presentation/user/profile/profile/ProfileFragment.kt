@@ -24,7 +24,7 @@ class ProfileFragment : BaseFragment<FragmentSahifamBinding>(FragmentSahifamBind
             binding.email.text = shared.getEmail()
         }else{
             binding.email.text = "Ro'yxatdan o'tish"
-            binding.name.text = ""
+            binding.name.text = shared.getName()
         }
         binding.authors.setOnClickListener {
             navController.navigate(R.id.action_sahifamFragment_to_authorsFragment)

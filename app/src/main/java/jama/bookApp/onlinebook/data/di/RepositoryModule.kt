@@ -74,10 +74,9 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideAuthors(
-        storageReference: FirebaseStorage,
         databaseReference: FirebaseDatabase
     ):AuthorsRepository{
-        return AuthorsRepositoryImp(storageReference,databaseReference)
+        return AuthorsRepositoryImp(databaseReference)
     }
 
     @Provides

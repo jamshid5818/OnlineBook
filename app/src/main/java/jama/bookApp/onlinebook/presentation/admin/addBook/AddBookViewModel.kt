@@ -24,14 +24,16 @@ class AddBookViewModel @Inject constructor(
     fun addBook(
         context: Context,
         pdfBooksModel: PdfBooksModel,
-        fileUri:Uri
+        fileUri:Uri,
+        imageAuthorUri: Uri
     ){
         _addBook.value = UiState.Loading(true)
         viewModelScope.launch(Dispatchers.Main){
             repository.addBook(
                 context = context,
                 fileUri = fileUri,
-                pdfBooksModel = pdfBooksModel
+                pdfBooksModel = pdfBooksModel,
+                imageAuthorUri = imageAuthorUri
             ){
                 _addBook.value = it
             }

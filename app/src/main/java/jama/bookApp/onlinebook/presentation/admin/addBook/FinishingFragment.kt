@@ -7,6 +7,7 @@ import android.util.Log
 import androidx.activity.result.ActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.net.toUri
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.whenCreated
@@ -28,12 +29,15 @@ class FinishingFragment : BaseFragment<FragmentFinishingBinding>(FragmentFinishi
     private var authorBook:String?=null
     private var isIslamic:Boolean?=null
     private var isAudio:Boolean?=null
+    private var imageAuthorUri:String?=null
     private val viewModel:AddBookViewModel by viewModels()
     override fun onViewCreate() {
         nameBook = arguments?.getString("NAMEBOOK")
         authorBook = arguments?.getString("AUTHORBOOK")
         isIslamic = arguments?.getBoolean("ISISLAMIC")
         isAudio = arguments?.getBoolean("ISAUDIO")
+        imageAuthorUri = arguments?.getString("IMAGEURIAUTHOR")
+
         observer()
         binding.imageBookAdmin.setOnClickListener {
             ImagePicker.with(this)
@@ -64,23 +68,23 @@ class FinishingFragment : BaseFragment<FragmentFinishingBinding>(FragmentFinishi
         if (resultCode == AppCompatActivity.RESULT_OK) {
             fileUri = data!!.data
             val randomKey = UUID.randomUUID()
-            fileUri?.let {uri->
-                isIslamic?.let { isIslamic ->
-                    isAudio?.let { isAudio ->
-                        PdfBooksModel(nameBook,
-                            imageUri.toString(),
-                            fileUri.toString(),binding.costBook.text.toString(),authorBook,binding.description.text.toString(),firebasePathAllBooks(randomKey.toString()), 0,
-                            isIslamic,
-                            isAudio
-                        )
-                    }
-                }?.let { pdfModel->
-                    viewModel.addBook(requireContext(),
-                        pdfModel,
-                        uri
-                    )
-                }
-            }
+            viewModel.addBook(
+                requireContext(),
+                PdfBooksModel(
+                    nameBook,
+                    imageUri.toString(),
+                    fileUri.toString(),
+                    binding.costBook.text.toString(),
+                    authorBook,
+                    binding.description.text.toString(),
+                    randomKey.toString(),
+                    0,
+                    isIslamic!!,
+                    isAudio!!
+                ),
+                fileUri!!,
+                imageAuthorUri!!.toUri()
+            )
         }
     }
 

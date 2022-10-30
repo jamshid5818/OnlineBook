@@ -21,7 +21,6 @@ class AuthorsFragment : BaseFragment<FragmentAuthorsBinding>(FragmentAuthorsBind
     override fun onViewCreate() {
         set()
         observe()
-
     }
 
     fun set() {

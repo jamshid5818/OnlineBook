@@ -6,6 +6,6 @@ import jama.bookApp.onlinebook.data.model.PdfBooksModel
 import jama.bookApp.onlinebook.data.utils.UiState
 
 interface AddBookRepository {
-    fun addBook(context: Context,fileUri: Uri, pdfBooksModel: PdfBooksModel, result: (UiState<String>) -> Unit)
+    fun addBook(context: Context,fileUri: Uri, pdfBooksModel: PdfBooksModel, imageAuthorUri:Uri, result: (UiState<String>) -> Unit)
 
 }

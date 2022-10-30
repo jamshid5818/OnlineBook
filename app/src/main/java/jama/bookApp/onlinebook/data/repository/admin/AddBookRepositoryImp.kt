@@ -19,9 +19,10 @@ class AddBookRepositoryImp @Inject constructor(
     var storageReference: FirebaseStorage,
     var databaseReference: FirebaseDatabase
 ) : AddBookRepository {
-    override fun addBook(context: Context,fileUri:Uri,pdfBooksModel: PdfBooksModel, result: (UiState<String>) -> Unit) {
+    override fun addBook(context: Context,fileUri:Uri,pdfBooksModel: PdfBooksModel, imageAuthorUri:Uri, result: (UiState<String>) -> Unit) {
         val referenceBookPdf = storageReference.getReference("pdfBooks").child("${pdfBooksModel.randomKey}.pdf")
         val referenceBookImage = storageReference.getReference("BookImages").child("${pdfBooksModel.randomKey}.jpg")
+        val referenceAuthorImage = storageReference.getReference("BookImages").child("${pdfBooksModel.randomKey}.jpg")
         val progressDialog = ProgressDialog(context)
         progressDialog.setTitle("Uploading Pdf file......")
         progressDialog.setCancelable(false)
@@ -36,39 +37,48 @@ class AddBookRepositoryImp @Inject constructor(
                                     .addOnSuccessListener {
                                         referenceBookImage.downloadUrl
                                             .addOnSuccessListener {uriImage->
-                                                databaseReference.getReference(getFirebaseRealData.getBooks).child("${pdfBooksModel.randomKey}--pdf").setValue(
-                                                    pdfBooksModel.randomKey?.let {randomKey->
-                                                        pdfBooksModel.isMuslimBook?.let { isMuslim ->
-                                                            pdfBooksModel.isAudioBook?.let { isAudio ->
-                                                                PdfBooksModel(
-                                                                    pdfBooksModel.nameBook,
-                                                                    uriImage.toString(),
-                                                                    uriPdf.toString(),
-                                                                    pdfBooksModel.costBook,
-                                                                    pdfBooksModel.authorBook,
-                                                                    pdfBooksModel.muqaddima,
-                                                                    randomKey,
-                                                                    pdfBooksModel.amountSold,
-                                                                    isMuslim,
-                                                                    isAudio
-                                                                )
-                                                            }
-                                                        }
-                                                    })
-                                                    .addOnSuccessListener {
-                                                        progressDialog.dismiss()
-                                                        result.invoke(UiState.Success("Succesfully"))
-                                                    }
-                                                    .addOnFailureListener {
-                                                        progressDialog.dismiss()
-                                                        Log.d("EEEEEEE", it.message.toString())
-                                                        result.invoke(UiState.Failure(it.message))
-                                                    }
-                                            }
-                                            .addOnFailureListener {
-                                                result.invoke(UiState.Failure(it.message))
-                                            }
-
+                                               referenceAuthorImage.putFile(imageAuthorUri)
+                                                   .addOnSuccessListener {
+                                                       referenceAuthorImage.downloadUrl
+                                                           .addOnSuccessListener { authorImageUri->
+                                                               databaseReference.getReference(getFirebaseRealData.getBooks).child("${pdfBooksModel.randomKey}--pdf").setValue(
+                                                                   pdfBooksModel.randomKey?.let {randomKey->
+                                                                       pdfBooksModel.isMuslimBook?.let { isMuslim ->
+                                                                           pdfBooksModel.isAudioBook?.let { isAudio ->
+                                                                               PdfBooksModel(
+                                                                                   pdfBooksModel.nameBook,
+                                                                                   uriImage.toString(),
+                                                                                   uriPdf.toString(),
+                                                                                   authorImageUri.toString(),
+                                                                                   pdfBooksModel.costBook,
+                                                                                   pdfBooksModel.authorBook,
+                                                                                   pdfBooksModel.muqaddima,
+                                                                                   randomKey,
+                                                                                   pdfBooksModel.amountSold,
+                                                                                   isMuslim,
+                                                                                   isAudio
+                                                                               )
+                                                                           }
+                                                                       }
+                                                                   })
+                                                                   .addOnSuccessListener {
+                                                                       progressDialog.dismiss()
+                                                                       result.invoke(UiState.Success("Succesfully"))
+                                                                   }
+                                                                   .addOnFailureListener {
+                                                                       progressDialog.dismiss()
+                                                                       Log.d("EEEEEEE", it.message.toString())
+                                                                       result.invoke(UiState.Failure(it.message))
+                                                                   }
+                                                           }
+                                                           .addOnFailureListener {
+                                                               result.invoke(UiState.Failure(it.message))
+                                                           }
+                                                           }
+                                                   .addOnFailureListener{
+                                                       result.invoke(UiState.Failure(it.message))
+                                                   }
+                                                   }
                                         //
                                     }
                                     .addOnFailureListener{
