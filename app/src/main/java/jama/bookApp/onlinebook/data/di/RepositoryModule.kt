@@ -14,8 +14,6 @@ import jama.bookApp.onlinebook.data.repository.user.audio.AudioRepository
 import jama.bookApp.onlinebook.data.repository.user.audio.AudioRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepository
 import jama.bookApp.onlinebook.data.repository.user.auth.AuthRepositoryImp
-import jama.bookApp.onlinebook.data.repository.user.authors.AuthorsRepository
-import jama.bookApp.onlinebook.data.repository.user.authors.AuthorsRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.books.BookRepository
 import jama.bookApp.onlinebook.data.repository.user.books.BookRepositoryImp
 import jama.bookApp.onlinebook.data.repository.user.hazrat.HazratimRepository
@@ -70,14 +68,7 @@ object RepositoryModule {
     ):AudioRepository{
         return AudioRepositoryImp(databaseReference)
     }
-    
-    @Provides
-    @Singleton
-    fun provideAuthors(
-        databaseReference: FirebaseDatabase
-    ):AuthorsRepository{
-        return AuthorsRepositoryImp(databaseReference)
-    }
+
 
     @Provides
     @Singleton

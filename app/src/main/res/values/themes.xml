@@ -2,8 +2,8 @@
     <!-- Base application theme. -->
     <style name="Theme.OnlineBook" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#FCFAEF</item>
-        <item name="colorPrimaryVariant">#ABABAB</item>
+        <item name="colorPrimary">#27B26C</item>
+        <item name="colorPrimaryVariant">#83E6B4</item>
         <item name="colorOnPrimary">@color/black</item>
 
         <!-- Secondary brand color. -->

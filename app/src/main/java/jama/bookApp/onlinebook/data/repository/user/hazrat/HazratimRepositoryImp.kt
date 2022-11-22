@@ -22,13 +22,22 @@ class HazratimRepositoryImp  @Inject constructor(
             myRef.getReference(getFirebaseRealData.getBooks)
                 .addValueEventListener(object :ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        snapshot.children.forEach {
-                            val data:PdfBooksModel = it.getValue(PdfBooksModel::class.java)!!
-                            if (data.isAudioBook==false && data.isMuslimBook==true){
-                                list.add(data)
+                        if (snapshot.value == null) {
+                            result.invoke(UiState.Failure("NULL"))
+                        } else {
+                            snapshot.children.forEach {
+                                if (it.value == null) {
+                                    result.invoke(UiState.Failure("NULL"))
+                                } else {
+                                    val data: PdfBooksModel =
+                                        it.getValue(PdfBooksModel::class.java)!!
+                                    if (data.isAudioBook == false && data.isMuslimBook == true) {
+                                        list.add(data)
+                                    }
+                                    result.invoke(UiState.Success(list))
+                                }
                             }
                         }
-                        result.invoke(UiState.Success(list))
                     }
 
                     override fun onCancelled(error: DatabaseError) {
@@ -45,13 +54,22 @@ class HazratimRepositoryImp  @Inject constructor(
             myRef.getReference(getFirebaseRealData.getBooks)
                 .addValueEventListener(object :ValueEventListener{
                     override fun onDataChange(snapshot: DataSnapshot) {
-                        snapshot.children.forEach {
-                            val data:PdfBooksModel = it.getValue(PdfBooksModel::class.java)!!
-                            if (data.isAudioBook==true && data.isMuslimBook==true){
-                                list.add(data)
+                        if (snapshot.value == null) {
+                            result.invoke(UiState.Failure("NULL"))
+                        } else {
+                            snapshot.children.forEach {
+                                if (it.value == null) {
+                                    result.invoke(UiState.Failure("Null"))
+                                } else {
+                                    val data: PdfBooksModel =
+                                        it.getValue(PdfBooksModel::class.java)!!
+                                    if (data.isAudioBook == true && data.isMuslimBook == true) {
+                                        list.add(data)
+                                    }
+                                    result.invoke(UiState.Success(list))
+                                }
                             }
                         }
-                        result.invoke(UiState.Success(list))
                     }
 
                     override fun onCancelled(error: DatabaseError) {

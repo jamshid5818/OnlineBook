@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    style="@style/bg_layout"
     android:id="@+id/fullLayout"
     android:layout_height="match_parent"
     tools:context=".presentation.admin.home.HomeFragment">

@@ -7,7 +7,6 @@ import com.google.firebase.database.ValueEventListener
 import jama.bookApp.onlinebook.data.model.PdfBooksModel
 import jama.bookApp.onlinebook.data.utils.UiState
 import jama.bookApp.onlinebook.data.utils.getFirebaseRealData
-import jama.bookApp.onlinebook.presentation.user.profile.authors.adapter.AuthorsData
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch

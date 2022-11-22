@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/bg_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".presentation.user.profile.auth.RegisterFragment">
 
@@ -43,7 +44,7 @@
                     android:fontFamily="@font/bree_serif_regular"
                     android:textSize="23sp"
                     android:gravity="center"
-                    android:textColor="@color/black"
+                    style="@style/texts"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -55,7 +56,7 @@
                     android:fontFamily="@font/bree_serif_regular"
                     android:textSize="23sp"
                     android:gravity="center"
-                    android:textColor="@color/black"
+                    style="@style/texts"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     />
@@ -72,7 +73,7 @@
                     android:text="Your name"
                     android:fontFamily="@font/bree_serif_regular"
                     android:textSize="24sp"
-                    android:textColor="@color/black"
+                    style="@style/texts"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -99,7 +100,7 @@
                     android:text="Your age"
                     android:fontFamily="@font/bree_serif_regular"
                     android:textSize="24sp"
-                    android:textColor="@color/black"
+                    style="@style/texts"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
@@ -131,7 +132,7 @@
                     android:layout_height="match_parent"
                     android:fontFamily="@font/bree_serif_regular"
                     android:gravity="bottom|center_horizontal"
-                    android:textColor="@color/black" />
+                    style="@style/texts" />
             </com.google.android.material.textfield.TextInputLayout>
             <com.google.android.material.textfield.TextInputLayout
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -150,7 +151,7 @@
                     android:maxLength="20"
                     android:gravity="bottom|center_horizontal"
                     android:layout_height="match_parent"
-                    android:textColor="@color/black"
+                    style="@style/texts"
                     android:fontFamily="@font/bree_serif_regular"
                     />
             </com.google.android.material.textfield.TextInputLayout>
@@ -197,7 +198,7 @@
                 android:layout_height="wrap_content"
                 android:text="Have you registered before?"
                 android:fontFamily="@font/bree_serif_regular"
-                android:textColor="@color/black"
+                style="@style/texts"
                 android:layout_marginStart="20dp"
                 android:textSize="14dp"
                 />
